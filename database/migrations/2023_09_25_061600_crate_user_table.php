@@ -12,8 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('user', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_user');
             $table->timestamps();
+            $table->string('email_user');
+            $table->string('password_user');
+            $table->foreign('id_vendor')->references('id')->on('vendor')
         });
     }
 

@@ -12,8 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('vendor', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_vendor');
             $table->timestamps();
+            $table->string('deskripsi_vendor');
+            $table->string('fasilitas_vendor');
+            $table->float('harga_vendor');
+            $table->image('foto_vendor');
+            $table->string('nomor_vendor');
+            $table->string('email_vendor');
+            $table->foreign('id_admin')->references('id')->on('admin')
         });
     }
 

@@ -12,8 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pemesanan', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id('id_pemesanan');
+            $table->timestamps(); 
+            $table->string('nama_pemesan');
+            $table->string('alamat_pemesanan');
+            $table->string('nomor_telpon');
+            $table->foreign('id_konsultasi')->references('id')->on('konsultasi')
+            $table->foreign('id_customer')->references('id')->on('customer')
+            $table->foreign('id_pembayaran')->references('id')->on('pembayaran')
         });
     }
 

@@ -12,8 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('konsultasi', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id('id_konsultasi');
+            $table->datetime('tanggal_waktu');
+            $table->string('topik');
+            $table->string('hasil');
+            $table->foreign('id_customer')->references('id')->on('customer')
+            $table->foreign('id_admin')->references('id')->on('admin')
+            $table->foreign('id_pemesanan')->references('id')->on('pemesanan')
         });
     }
 

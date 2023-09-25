@@ -12,8 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pembayaran', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_pembayaran');
             $table->timestamps();
+            $table->float('jumlah');
+            $table->string('e-wallet');
+            $table->string('status_pembayaran');
+            $table->datetime('tanggal_pembayaran');
         });
     }
 

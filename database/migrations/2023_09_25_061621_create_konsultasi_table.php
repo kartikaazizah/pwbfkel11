@@ -16,9 +16,12 @@ return new class extends Migration
             $table->datetime('tanggal_waktu');
             $table->string('topik');
             $table->string('hasil');
-            $table->foreign('id_customer')->references('id')->on('customer')
-            $table->foreign('id_admin')->references('id')->on('admin')
-            $table->foreign('id_pemesanan')->references('id')->on('pemesanan')
+            $table->foreignId('id_admin')->constarined('admin');
+            $table->foreignId('id_customer')->constarined('customer');
+            $table->foreignId('id_pemesanan')->constarined('pemesanan');
+           // $table->foreign('id_customer')->references('id')->on('customer');
+           // $table->foreign('id_admin')->references('id')->on('admin');
+           // $table->foreign('id_pemesanan')->references('id')->on('pemesanan');
         });
     }
 

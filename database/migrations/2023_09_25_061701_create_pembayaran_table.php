@@ -18,6 +18,9 @@ return new class extends Migration
             $table->string('e-wallet');
             $table->string('status_pembayaran');
             $table->datetime('tanggal_pembayaran');
+            $table->foreignId('id_pemesanan')->constarined('pemesanan');
+            $table->foreignId('id_customer')->constarined('customer');
+           // $table->foreign('id_pemesanan')->references('id')->on('pemesanan');
         });
     }
 

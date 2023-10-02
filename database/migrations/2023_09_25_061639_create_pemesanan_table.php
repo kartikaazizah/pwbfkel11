@@ -17,9 +17,12 @@ return new class extends Migration
             $table->string('nama_pemesan');
             $table->string('alamat_pemesanan');
             $table->string('nomor_telpon');
-            $table->foreign('id_konsultasi')->references('id')->on('konsultasi')
-            $table->foreign('id_customer')->references('id')->on('customer')
-            $table->foreign('id_pembayaran')->references('id')->on('pembayaran')
+            $table->foreignId('id_konsultasi')->constarined('konsultasi');
+            $table->foreignId('id_customer')->constarined('customer');
+            $table->foreignId('id_pembayaran')->constarined('pembayaran');
+           // $table->foreign('id_konsultasi')->references('id')->on('konsultasi');
+           // $table->foreign('id_customer')->references('id')->on('customer');
+           // $table->foreign('id_pembayaran')->references('id')->on('pembayaran');
         });
     }
 

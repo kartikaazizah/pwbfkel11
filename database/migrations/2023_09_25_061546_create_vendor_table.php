@@ -17,12 +17,12 @@ return new class extends Migration
             $table->string('deskripsi_vendor');
             $table->string('fasilitas_vendor');
             $table->float('harga_vendor');
-            $table->image('foto_vendor');
+            // $table->image('foto_vendor');
             $table->string('nomor_vendor');
             $table->string('email_vendor');
-            $table->foreign('id_admin')->references('id')->on('admin')
+            $table->foreignId('id_admin')->constarined('admin');
         });
-    }
+}
 
     /**
      * Reverse the migrations.

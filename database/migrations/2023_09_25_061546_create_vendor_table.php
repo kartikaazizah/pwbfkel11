@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('deskripsi_vendor');
             $table->string('fasilitas_vendor');
             $table->float('harga_vendor');
-            // $table->image('foto_vendor');
+            //$table->imagePath('foto_vendor');
             $table->string('nomor_vendor');
             $table->string('email_vendor');
             $table->foreignId('id_admin')->constarined('admin');

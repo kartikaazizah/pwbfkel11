@@ -18,8 +18,8 @@ class admin extends Model
   //  return $this->belongsTo(admin::class);
 //}
 
-public function vendor()
-{
-    return $this->hasMany(vendor::class);
-}
+//public function vendor()
+//{
+   // return $this->hasMany(vendor::class);
+//}
 

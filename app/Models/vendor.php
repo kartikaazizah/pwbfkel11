@@ -17,7 +17,7 @@ class vendor extends Model
 //{
   //  return $this->hasMany(Book::class);
 //}
-use HasFactory;
+//use HasFactory;
 
 public function admin()
 {
